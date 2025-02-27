@@ -57,4 +57,20 @@ public final class Calculadora {
         }
         return (double) a / b;
     }
+    
+    
+    /**
+    * Calcula el módulo (resto) de la división entre dos números enteros.
+    *
+    * @param a Dividendo
+    * @param b Divisor (no puede ser 0)
+    * @return El resto de la división de a entre b
+    * @throws IllegalArgumentException si b es 0
+    */
+    public int modulo(int a, int b) {
+        if (b == 0) {
+            throw new IllegalArgumentException("No se puede calcular el módulo con divisor cero");
+        }
+        return a % b;
+    }
 }

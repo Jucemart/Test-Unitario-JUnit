@@ -72,4 +72,31 @@ public class CalculadoraTest {
         });
         assertEquals("No se puede dividir por cero", exception.getMessage(), "La excepción esperada no fue lanzada correctamente.");
     }
+    
+    /**
+ * Prueba unitaria para el método modulo().
+ * Verifica que el cálculo del módulo sea correcto.
+ */
+@Test
+public void testModulo() {
+    System.out.println("modulo");
+    Calculadora instance = new Calculadora();
+    int result = instance.modulo(10, 3);
+    assertEquals(1, result, "Error en el cálculo del módulo");
+}
+
+/**
+ * Prueba unitaria para validar que el módulo con divisor cero lanza una excepción.
+ */
+@Test
+public void testModuloPorCero() {
+    System.out.println("modulo por cero");
+    Calculadora instance = new Calculadora();
+    Exception exception = assertThrows(IllegalArgumentException.class, () -> {
+        instance.modulo(10, 0);
+    });
+    assertEquals("No se puede calcular el módulo con divisor cero", exception.getMessage(), 
+                 "La excepción esperada no fue lanzada correctamente.");
+}
+
 }
